@@ -1,0 +1,47 @@
+$blueColor: rgb(32, 22, 96);
+$color1: brown;
+// @mixin cont1 {
+//     width: 200px;
+//     height: 100px;
+//     background-color: blueviolet;
+// }
+
+// @mixin cont2 {
+//     width: 200px;
+//     height: 100px;
+//     background-color: yellowgreen;
+// }
+
+@mixin cont ($width, $height, $bcg) {
+    width: $width;
+    height: $height;
+    background-color: $bcg;
+}
+
+
+
+body{
+    h1{
+        background-color: blue;
+        color: red;   
+    }
+    }
+
+// //.wrapper{
+//     h2{color:$blueColor;}
+//     &_sample{background-color: lightgreen;
+//         .someSpan{color: green;
+//     }
+//     a {color: yellow;
+//         &:hover{color:brown;}
+//     }
+// }
+
+.container{
+    @include cont(200px, 100px, lightgreen)
+}
+
+$widhtNormal: 500 px;
+.container2{
+    @include cont($widhtNormal, 150px, blue)
+}
